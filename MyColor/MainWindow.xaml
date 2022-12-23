@@ -1,0 +1,32 @@
+﻿<Window x:Class="MyColor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="700" MinWidth="700" MinHeight="750"
+        xmlns:local="clr-namespace:MyColor"
+        xmlns:viewModel="clr-namespace:MyColor" 
+        xmlns:col="clr-namespace:System.Collections;assembly=System.Runtime.Extensions">
+    <Window.DataContext>
+        <viewModel:Color1ViewModel x:Name="VM"/>
+    </Window.DataContext>
+    <Grid Margin="0,0,0,0" Width="auto" Height="auto">
+        <Slider ValueChanged="SliderAlpha_ValueChanged" Margin="100,10,120,729" Minimum="0" Maximum="255"/>
+        <Slider ValueChanged="SliderRed_ValueChanged" Margin="100,60,120,678" Minimum="0" Maximum="255"/>
+        <Slider ValueChanged="SliderGreen_ValueChanged" Margin="100,156,120,580" Minimum="0" Maximum="255"/>
+        <Slider ValueChanged="SliderBlue_ValueChanged" Margin="100,106,120,633" Minimum="0" Maximum="255"/>
+        
+        <Label Width="50" Margin="609,10,41,617" Background="{Binding ColorLabel}" />
+        
+        <Label Background="White" Content="Alpha:" HorizontalAlignment="Left" Margin="32,7,0,0" VerticalAlignment="Top"/>
+        <Label Background="Red" Content="Red:" HorizontalAlignment="Left" Margin="42,57,0,0" VerticalAlignment="Top"/>
+        <Label Background="Green" Content="Green:" HorizontalAlignment="Left" Margin="30,154,0,0" VerticalAlignment="Top"/>
+        <Label Background="Blue" Content="Blue:" HorizontalAlignment="Left" Margin="39,103,0,0" VerticalAlignment="Top"/>
+
+        <WrapPanel Margin="10,242,10,10" Width="auto" Height="auto" Name="ListColorsH"></WrapPanel>
+
+
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="10,217,0,0" VerticalAlignment="Top" Width="74" Click="Button_Click"/>
+    </Grid>
+</Window>
